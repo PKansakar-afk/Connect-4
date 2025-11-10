@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-Upgraded Connect4 client (client.py)
 
 Features:
  - Uses the same upgraded protocol as server.py

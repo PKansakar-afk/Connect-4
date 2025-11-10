@@ -15,20 +15,20 @@ import time
 import tkinter as tk
 from tkinter import messagebox
 import sys
-import uuid  # <-- Added
+import uuid
 import argparse
 
 # --- Configuration ---
 CELL_SIZE = 80
 ROWS, COLS = 6, 7
-PROTOCOL_VERSION = "1.1"        # <-- Added
-HEARTBEAT_INTERVAL = 8        # <-- Added
+PROTOCOL_VERSION = "1.1"
+HEARTBEAT_INTERVAL = 8
 
 # --- Logging ---
 def log(msg):
     print(f"{time.strftime('%H:%M:%S')} CLIENT: {msg}", file=sys.stdout, flush=True)
 
-# --- Protocol Utilities (Copied from client_cli.py) ---
+# --- Protocol Utilities ---
 def now_ts():
     return time.time()
 
@@ -45,7 +45,7 @@ def make_msg(msg_type, payload=None, seq=None):
 def dumps_line(obj):
     return (json.dumps(obj, separators=(",", ":")) + "\n").encode("utf-8")
 
-# --- Networking (Adapted from client_cli.py) ---
+# --- Networking ---
 class GameClient:
     """
     This is the Client class from client_cli.py, renamed to GameClient
@@ -241,7 +241,7 @@ class GameClient:
         self.send("MOVE", {"col": col}, seq=self.next_seq())
 
 
-# --- GUI (Updated to use new GameClient) ---
+# --- GUI ---
 class Connect4GUI:
     def __init__(self, root, host, port, name):
         self.root = root

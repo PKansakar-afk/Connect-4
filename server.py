@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-Upgraded Connect4 server (server.py)
 
 Features:
  - JSON-over-TCP protocol (newline-delimited) with versioning, seq, request_id, timestamp
